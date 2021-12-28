@@ -3,7 +3,7 @@
 - [Пономарев Вадим](https://github.com/VxDxK)
 - [Кизилов Степан](https://github.com/AwFaGi)
 - [Вагаев Артем](https://github.com/X1ebuchek)
-- Тут наверное тоже
+- [Птицын Максим](https://github.com/Kyoto67) 
 - И тут еще будет кто-то
 ## Правила пользования репозиторием
 - Без **force** пушей в ветки
