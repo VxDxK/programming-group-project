@@ -63,7 +63,7 @@
                 <executions>
                     <execution>
                         <id>gen</id>
-                        <phase>site</phase>
+                        <phase>install</phase>
                         <goals>
                             <goal>javadoc</goal>
                         </goals>
