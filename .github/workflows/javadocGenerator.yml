@@ -28,7 +28,7 @@ jobs:
         mv target/docs/ .
         git add .
         if [[ `git status --porcelain` ]]; then
-            git commit -m "Перегенерация"
+            git commit -m "Regenerate Javadoc"
             git push
         fi
         
