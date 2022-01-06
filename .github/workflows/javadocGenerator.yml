@@ -24,7 +24,7 @@ jobs:
         git fetch
         git checkout docs-branch
         git merge --allow-unrelated-histories master
-        mvn -B package --file pom.xml
+        mvn -B install --file pom.xml
         mv target/docs/ .
         git add .
         if [[ `git status --porcelain` ]]; then
