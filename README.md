@@ -1,4 +1,5 @@
 # Лаба за автомат
+## [Javadoc](https://vxdxk.github.io/programming-group-project/)
 ## Список группы
 - [Пономарев Вадим](https://github.com/VxDxK)
 - [Кизилов Степан](https://github.com/AwFaGi)
