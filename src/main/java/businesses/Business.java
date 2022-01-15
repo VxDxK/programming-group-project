@@ -3,10 +3,8 @@ package businesses;
 import persons.Person;
 import products.Manufacturable;
 import util.Pair;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -18,6 +16,7 @@ public abstract class Business<T extends Manufacturable> {
     protected List<Pair<IndustryType, Integer>> types= new ArrayList<>();
     protected Integer businessLife;
     protected List<T> products = new ArrayList<>();
+
 
     public List<Pair<IndustryType, Integer>> getTypes() {
         return types;

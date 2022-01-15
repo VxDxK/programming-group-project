@@ -12,7 +12,22 @@ import java.util.List;
  */
 public class CheeseDairy extends Business<Cheese> {
 
+    {
+        types.add(new Pair<>(IndustryType.FOOD, 3));
+    }
+
     @Override
     public void mainActivity() {
+
+    }
+
+    @Override
+    public void addProduct(Cheese item) {
+        super.addProduct(item);
+    }
+
+    @Override
+    public List<Cheese> getAllProducts() {
+        return super.getAllProducts();
     }
 }
