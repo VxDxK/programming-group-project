@@ -1,15 +1,62 @@
 @startuml diagram
 
-class HelloWorld
-
-enum ThingTypes{
-    ESKIZ
-    OTLIVKA
-	POKOVKA
-	STAMPOVKA
-	APPARATURA
-    BLUEPRINT
-    ROCKET
+package businesses {
+  class AkhmadullinaDreams
+  class Business<T extends Manufacturable>
+  class BusinessFoundFailException
+  interface Businessman {
+    found(business: Business<?>) throws BusinessFoundFailException
+    getBusiness() : Business<?>
+  }
+  class CheeseDairy
+  enum IndustryType{
+    TELECOMMUNICATION
+    CONSTRUCTION
+    ENERGY
+    FOOD
+    RESTAURANT
+    FASHION
+  }
+  class Market
+  class Restaurant
 }
+
+package persons {
+  class AlenaAkhmadullina
+  class GeorgeTroyan
+  class OlegSirota
+  interface Businessman
+  abstract class Person
+}
+
+package products {
+    class Cheese
+    class Clothes
+    class Denim
+    abstract class Food
+    class Jeans
+    interface Manufacturable
+}
+
+package util {
+    class Pair <K, V>
+}
+
+Business <|-- AkhmadullinaDreams : <Clothes>
+Business <|-- CheeseDairy : <Cheese>
+Business <|-- Restaurant : <Food>
+
+Person <|-- AlenaAkhmadullina
+Businessman <|.. AlenaAkhmadullina
+
+Person <|-- OlegSirota
+Businessman <|.. OlegSirota
+
+Food <|-- Cheese
+Manufacturable <|.. Clothes
+Clothes <|-- Denim
+Manufacturable <|.. Food
+Clothes <|-- Jeans
+
 
 @enduml
