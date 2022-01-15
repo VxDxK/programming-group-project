@@ -17,18 +17,14 @@ jobs:
         java-version: '8'
         distribution: 'adopt'
         cache: maven
-    - name: generate javadoc and push to gh-pages
-      run: |
-        git config --global user.email "helper@nothing.com"
-        git config --global user.name "VxDxK_help_bot"
-        git fetch
-        git checkout docs-branch
-        git merge --allow-unrelated-histories master
-        mvn -B install --file pom.xml
-        mv target/docs/ .
-        git add .
-        if [[ `git status --porcelain` ]]; then
-            git commit -m "Regenerate Javadoc"
-            git push
-        fi
+    - name: Generate Javadoc
+      run: mvn -B install --file pom.xml
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@3.5.9
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        CLEAN: true
+        FOLDER: target/docs
+        TARGET_FOLDER: javadoc
         
