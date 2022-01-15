@@ -1,19 +1,18 @@
-import businesses.AkhmadullinaDreams;
-import businesses.Business;
-import businesses.BusinessFoundFailException;
-import businesses.Businessman;
+import businesses.*;
 import persons.AlenaAkhmadullina;
 import persons.OlegSirota;
-import persons.Person;
 import products.Clothes;
 
-import java.util.logging.Logger;
-
+/**
+ * Класс с main методом
+ * @author vadim
+ */
 public class Main {
     public static void main(String[] args) {
+        Market market = new Market();
         Businessman olegSirota = new OlegSirota();
-
         //Главная история
+
         Businessman alenaAkhmadullina = new AlenaAkhmadullina();
         Business<Clothes> dreams = new AkhmadullinaDreams();
         try {

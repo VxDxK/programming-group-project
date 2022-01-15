@@ -2,20 +2,26 @@ package businesses;
 
 import persons.Person;
 import products.Manufacturable;
+import sun.security.krb5.internal.crypto.Aes128CtsHmacSha1EType;
+import util.Pair;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Базовый класс для написания предприятий
+ * @param <T> тип производимого сырья
+ */
 public abstract class Business<T extends Manufacturable> {
     protected Person ceo;
+    protected List<Pair<IndustryType, Integer>> types= new ArrayList<>();
     protected Integer businessLife;
-    protected IndustryType type;
     protected List<T> products = new ArrayList<>();
 
-    public IndustryType getType() {
-        return type;
+    public List<Pair<IndustryType, Integer>> getTypes() {
+        return types;
     }
 
     public Person getCeo() {
