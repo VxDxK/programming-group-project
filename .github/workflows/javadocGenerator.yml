@@ -19,16 +19,12 @@ jobs:
         cache: maven
     - name: generate javadoc and push to gh-pages
       run: |
-        git config --global user.email "helper@nothing.com"
-        git config --global user.name "VxDxK_help_bot"
-        git fetch
-        git push origin -d docs-branch 2> /dev/null
-        git checkout -b docs-branch
         mvn -B install --file pom.xml
-        mv target/docs/ .
-        git add .
-        if [[ `git status --porcelain` ]]; then
-            git commit -m "Regenerate Javadoc"
-            git push
-        fi
+        uses: JamesIves/github-pages-deploy-action@3.5.9
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          CLEAN: true
+          FOLDER: target/docs
+          TARGET_FOLDER: javadoc
         
