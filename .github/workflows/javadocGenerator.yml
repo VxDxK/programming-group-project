@@ -19,12 +19,9 @@ jobs:
         cache: maven
     - name: Generate Javadoc
       run: mvn -B install --file pom.xml
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@3.5.9
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4.2.2
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        CLEAN: true
-        FOLDER: target/docs
-        TARGET_FOLDER: javadoc
+        branch: gh-pages
+        folder: target/docs
         
