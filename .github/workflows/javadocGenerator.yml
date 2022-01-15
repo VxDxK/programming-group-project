@@ -23,7 +23,7 @@ jobs:
         git config --global user.name "VxDxK_help_bot"
         git fetch
         git push origin -d docs-branch 2> /dev/null
-        git checkout 
+        git checkout -b docs-branch
         mvn -B install --file pom.xml
         mv target/docs/ .
         git add .
