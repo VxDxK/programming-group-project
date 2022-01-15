@@ -18,7 +18,7 @@ public abstract class Person {
     public abstract void join(Business<?> business);
     public abstract void eat(Food food);
 
-    Person(int saturation, double saturationCoefficient){
+    public Person(int saturation, double saturationCoefficient){
         this.saturation = saturation;
         this.saturationCoefficient = saturationCoefficient;
     }

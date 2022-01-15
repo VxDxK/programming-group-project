@@ -10,19 +10,23 @@ import java.util.*;
  */
 public class Market {
     protected int allMass = 0;
-    Map<IndustryType, List<Business<?>>> companies = new HashMap<>();
+    Map<IndustryType, List<Pair<Business<?>, Integer> >> companies = new HashMap<>();
 
     {
         Arrays.stream(IndustryType.values()).forEach(i -> companies.put(i, new ArrayList<>()));
     }
-    public void addBusines(Business<?> business){
+    public void addBusiness(Business<?> business){
         for (Pair<IndustryType, Integer> now: business.getTypes()){
-            companies.get(now.getFirst()).add(business);
+            companies.get(now.getFirst()).add(new Pair<>(business, now.getSecond()));
             allMass += now.getSecond();
         }
     }
 
-    public List<Business<?>> getIndustry(IndustryType type){
+    public int getAllMass(){
+        return allMass;
+    }
+
+    public List<Pair<Business<?>, Integer>> getIndustry(IndustryType type){
         return companies.get(type);
     }
 
