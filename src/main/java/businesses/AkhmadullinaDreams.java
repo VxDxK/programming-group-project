@@ -2,6 +2,7 @@ package businesses;
 
 import persons.Person;
 import products.Clothes;
+import products.Food;
 import products.Manufacturable;
 import util.Pair;
 

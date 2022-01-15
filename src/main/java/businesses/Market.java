@@ -15,7 +15,7 @@ public class Market {
     {
         Arrays.stream(IndustryType.values()).forEach(i -> companies.put(i, new ArrayList<>()));
     }
-    public void addBusines(Business<?> business){
+    public void addBusiness(Business<?> business){
         for (Pair<IndustryType, Integer> now: business.getTypes()){
             companies.get(now.getFirst()).add(business);
             allMass += now.getSecond();
