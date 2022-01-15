@@ -22,7 +22,7 @@ jobs:
         git config --global user.email "helper@nothing.com"
         git config --global user.name "VxDxK_help_bot"
         git fetch
-        git push origin -d docs-branch
+        git push origin -d docs-branch 2> /dev/null
         git checkout 
         mvn -B install --file pom.xml
         mv target/docs/ .
