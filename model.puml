@@ -4,19 +4,9 @@ package businesses {
   class AkhmadullinaDreams
   class Business<T extends Manufacturable>
   class BusinessFoundFailException
-  interface Businessman {
-    found(business: Business<?>) throws BusinessFoundFailException
-    getBusiness() : Business<?>
-  }
+  interface Businessman
   class CheeseDairy
-  enum IndustryType{
-    TELECOMMUNICATION
-    CONSTRUCTION
-    ENERGY
-    FOOD
-    RESTAURANT
-    FASHION
-  }
+  enum IndustryType
   class Market
   class Restaurant
 }
@@ -32,14 +22,20 @@ package persons {
 package products {
     class Cheese
     class Clothes
-    class Denim
+    enum Clothes.Sex
+    class DenimJacket
+    class Dress
     abstract class Food
     class Jeans
     interface Manufacturable
+    class Scarf
+    class Sweatshirt
+    class ClothesFactory
 }
 
 package util {
     class Pair <K, V>
+    class Range
 }
 
 Business <|-- AkhmadullinaDreams : <Clothes>
@@ -52,11 +48,17 @@ Businessman <|.. AlenaAkhmadullina
 Person <|-- OlegSirota
 Businessman <|.. OlegSirota
 
+Businessman <|.. GeorgeTroyan
+Person <|-- GeorgeTroyan
+
 Food <|-- Cheese
 Manufacturable <|.. Clothes
-Clothes <|-- Denim
+Clothes <|-- DenimJacket
+Clothes <|-- Dress
 Manufacturable <|.. Food
 Clothes <|-- Jeans
-
+Clothes <.. Clothes.Sex
+Clothes <|-- Sweatshirt
+Clothes <|-- Scarf
 
 @enduml
