@@ -1,0 +1,15 @@
+@startuml diagram
+
+class HelloWorld
+
+enum ThingTypes{
+    ESKIZ
+    OTLIVKA
+	POKOVKA
+	STAMPOVKA
+	APPARATURA
+    BLUEPRINT
+    ROCKET
+}
+
+@enduml

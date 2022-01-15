@@ -70,6 +70,26 @@
                     </execution>
                 </executions>
             </plugin>
+			<plugin>
+				<groupId>com.github.jeluard</groupId>
+				<artifactId>plantuml-maven-plugin</artifactId>
+				<version>1.2</version>
+				<configuration>
+					<sourceFiles>
+						<directory>${basedir}</directory>
+						<includes>
+							<include>model.puml</include>
+						</includes>
+					</sourceFiles>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>net.sourceforge.plantuml</groupId>
+						<artifactId>plantuml</artifactId>
+						<version>8059</version>
+					</dependency>
+				</dependencies>
+			</plugin>
         </plugins>
     </build>
 
