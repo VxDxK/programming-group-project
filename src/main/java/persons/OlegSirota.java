@@ -3,10 +3,11 @@ package persons;
 import businesses.Business;
 import businesses.BusinessFoundFailException;
 import businesses.Businessman;
+import products.Cheese;
 import products.Food;
 import products.Manufacturable;
 
-public class OlegSirota extends Person implements Businessman {
+public final class OlegSirota extends Person implements Businessman {
     public OlegSirota() {
         super(50, 0.8);
     }
@@ -32,7 +33,7 @@ public class OlegSirota extends Person implements Businessman {
     }
 
     @Override
-    public void found(Business<?> business) throws BusinessFoundFailException {
+    public void found(Business business) throws BusinessFoundFailException {
 
     }
 

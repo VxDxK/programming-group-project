@@ -1,21 +1,48 @@
-import businesses.AkhmadullinaDreams;
-import businesses.Business;
-import businesses.BusinessFoundFailException;
-import businesses.Businessman;
+import businesses.*;
 import persons.AlenaAkhmadullina;
+import persons.GeorgeTroyan;
 import persons.OlegSirota;
-import persons.Person;
+import products.Cheese;
 import products.Clothes;
+import products.Food;
+import products.Manufacturable;
 
-import java.util.logging.Logger;
-
+/**
+ * Класс с main методом
+ * @author vadim
+ */
 public class Main {
     public static void main(String[] args) {
-        Businessman olegSirota = new OlegSirota();
+        Market market = new Market();
 
-        //Главная история
+        Businessman georgeTroyan = new GeorgeTroyan();
+        Business<Food> restaurant = new Restaurant();
+
+
+        Businessman olegSirota = new OlegSirota();
+        Business<Cheese> cheeseDairy = new CheeseDairy();
+
+        market.addBusiness(restaurant);
+        market.addBusiness(cheeseDairy);
+        try {
+            georgeTroyan.found(restaurant);
+            olegSirota.found(cheeseDairy);
+        } catch (BusinessFoundFailException e) {
+            e.printStackTrace();
+        }
+        //Главная история> (a.getSecond() + b.getSecond()));
+
+
         Businessman alenaAkhmadullina = new AlenaAkhmadullina();
-        Business<Clothes> dreams = new AkhmadullinaDreams();
+        AkhmadullinaDreams dreams = new AkhmadullinaDreams();
+        market.addBusiness(dreams);
+
+        int sum = 0;
+        for(int i = 0; i < market.getIndustry(IndustryType.FASHION).size(); i++){
+            sum += market.getIndustry(IndustryType.FASHION).get(i).getSecond();
+        }
+        System.out.println("Доля рынка фэшн-индустрии: " + (double)sum/(double)market.getAllMass());
+
         try {
             alenaAkhmadullina.found(dreams);
         }catch (BusinessFoundFailException e){
@@ -23,6 +50,8 @@ public class Main {
             System.exit(-1);
         }
         System.out.println("Упорство и профессионализм помогли " + alenaAkhmadullina.getClass().getSimpleName() + " добиться успеха");
+
+        dreams.celebrateAnn(cheeseDairy);
 
     }
 }
