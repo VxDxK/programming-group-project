@@ -1,6 +1,7 @@
 package businesses;
 
 import org.junit.jupiter.api.Test;
+import util.Pair;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,6 +9,7 @@ class AkhmadullinaDreamsTest {
     @Test
     void constructorTest(){
         AkhmadullinaDreams akhmadullinaDreams = new AkhmadullinaDreams();
-        assertEquals(akhmadullinaDreams.getType(), IndustryType.FASHION);
+        assertEquals(akhmadullinaDreams.getTypes().size(), 1);
+        assertEquals(akhmadullinaDreams.getTypes().get(0), new Pair<>(IndustryType.FASHION, 1));
     }
 }

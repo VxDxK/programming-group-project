@@ -1,5 +1,5 @@
 package persons;
 
-public class GeorgeTroyan{
+public final class GeorgeTroyan{
 
 }

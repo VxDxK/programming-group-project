@@ -6,7 +6,7 @@ import businesses.Businessman;
 import products.Food;
 import products.Manufacturable;
 
-public class OlegSirota extends Person implements Businessman {
+public final class OlegSirota extends Person implements Businessman {
     public OlegSirota() {
         super(50, 0.8);
     }
