@@ -1,5 +1,10 @@
 package products;
 
+/**
+ * Вспомогатальный класс для написания циклов в Python стиле
+ * @author artem
+ */
+
 public class Cheese extends Food{
     @Override
     public void produce() {
