@@ -59,6 +59,6 @@ public final class DenimJacket extends Clothes {
 
     @Override
     public void produce() {
-
+        System.out.println("Произведена куртка из денима");
     }
 }

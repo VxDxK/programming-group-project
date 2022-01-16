@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public final class Dress extends Clothes{
     /**
-     * длинна платья
+     * длина платья
      */
     protected int length;
     /**
@@ -57,7 +57,6 @@ public final class Dress extends Clothes{
 
     @Override
     public void produce() {
-
+        System.out.println("Платье произведено");
     }
-
 }

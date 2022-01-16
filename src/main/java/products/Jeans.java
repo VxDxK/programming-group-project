@@ -57,6 +57,6 @@ public final class Jeans extends Clothes{
 
     @Override
     public void produce() {
-
+        System.out.println("Джинсы произведены");
     }
 }
