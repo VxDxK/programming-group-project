@@ -47,13 +47,12 @@ public final class Jeans extends Clothes{
 
     @Override
     public String toString() {
-        return "Jeans{" +
-                "color=" + color +
-                ", size=" + size +
-                ", sex=" + sex +
-                ", skinny=" + skinny +
-                ", fit='" + fit + '\'' +
-                '}';
+        return "Джинсы " +
+                "цвет=" + color.toString() +
+                ", цвет=" + size +
+                ", пол=" + sex +
+                ", зауженность=" + skinny +
+                ", форма=" + fit;
     }
 
     @Override

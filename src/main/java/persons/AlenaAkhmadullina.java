@@ -11,13 +11,14 @@ import java.time.LocalDate;
 
 
 public final class AlenaAkhmadullina extends Person implements Businessman {
-
+    public Business<?> business;
     public AlenaAkhmadullina() {
         super(30, 1.2);
     }
 
     @Override
     public void found(Business<?> business) throws BusinessFoundFailException {
+        this.business = business;
         business.setCeo(this);
         business.setBusinessLife(0);
         System.out.println("Бренд основан");
@@ -45,27 +46,27 @@ public final class AlenaAkhmadullina extends Person implements Businessman {
 
     @Override
     public Business<?> getBusiness() {
-        return null;
+        return business;
     }
 
 
     @Override
     public void watch(Manufacturable item) {
-
+        System.out.println("Ахмадулина взглянула на предмет " + item);
     }
 
     @Override
     public void watch(Person somebody) {
-
+        System.out.println("Алена бросила взгляд на какую-то челядь");
     }
 
     @Override
     public void eat(Food food) {
-
+        saturation += (food.getSatiety()) * saturationCoefficient;
     }
 
     @Override
-    public void join(Business business) {
-
+    public void join(Business<?> business) {
+        System.out.println("Алена Ахмадулина посетила какое место");
     }
 }
