@@ -6,7 +6,18 @@ import businesses.Businessman;
 import products.Food;
 import products.Manufacturable;
 
+
+/**
+ * Класс персонажа
+ * Георгий Троян
+ * Владелец ресторана
+ * @author maxim
+ */
+=======
 public final class GeorgeTroyan extends Person implements Businessman {
+     /**
+     * Инициализация бизнеса
+     */
     public Business<?> business;
 
     public GeorgeTroyan(int saturation, double saturationCoefficient) {

@@ -8,10 +8,22 @@ import products.Manufacturable;
 
 import java.time.LocalDate;
 
-
+/**
+ * Класс персонажа
+ * Алёна Ахмадуллина
+ * Владелица бренда
+ * @author maxim
+ **/
 
 public final class AlenaAkhmadullina extends Person implements Businessman {
+    /**
+     * Инициализация бизнеса
+     */
     public Business<?> business;
+    /**
+     * Конструктор суперкласса
+     */
+
     public AlenaAkhmadullina() {
         super(30, 1.2);
     }
