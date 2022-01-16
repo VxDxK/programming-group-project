@@ -8,12 +8,10 @@ import products.Manufacturable;
 
 
 /**
- * Класс персонажа
  * Георгий Троян
  * Владелец ресторана
  * @author maxim
  */
-=======
 public final class GeorgeTroyan extends Person implements Businessman {
      /**
      * Инициализация бизнеса
