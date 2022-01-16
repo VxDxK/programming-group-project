@@ -49,17 +49,16 @@ public final class DenimJacket extends Clothes {
 
     @Override
     public String toString() {
-        return "DenimJacket{" +
-                "color=" + color +
-                ", size=" + size +
-                ", sex=" + sex +
-                ", longSleeves=" + longSleeves +
-                ", hood=" + hood +
-                '}';
+        return "Куртка из денима " +
+                "цвет=" + color +
+                ", размер=" + size +
+                ", пол=" + sex +
+                ", есть ли рукава=" + longSleeves +
+                ", капюшон=" + hood;
     }
 
     @Override
     public void produce() {
-
+        System.out.println("Произведена куртка из денима");
     }
 }
