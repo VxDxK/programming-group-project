@@ -3,7 +3,6 @@ package persons;
 import businesses.Business;
 import businesses.BusinessFoundFailException;
 import businesses.Businessman;
-import products.Cheese;
 import products.Food;
 import products.Manufacturable;
 
@@ -13,7 +12,7 @@ import products.Manufacturable;
  * Владелец сыроварни
  */
 public final class OlegSirota extends Person implements Businessman {
-    /**
+     /**
      * Инициализация бизнеса
      */
     public Business<?> business;
@@ -27,31 +26,31 @@ public final class OlegSirota extends Person implements Businessman {
 
     @Override
     public void watch(Manufacturable item) {
-
+        System.out.println("Олег сирота посмотрел на " + item);
     }
 
     @Override
     public void watch(Person somebody) {
-
+        System.out.println("Олег сирота залюбовался " + somebody);
     }
 
     @Override
     public void join(Business<?> business) {
-
+        System.out.println("Пришел в " + business);
     }
 
     @Override
     public void eat(Food food) {
-
+        System.out.println("Олег сирота съел" + food);
     }
 
     @Override
-    public void found(Business business) throws BusinessFoundFailException {
-
+    public void found(Business<?> business) throws BusinessFoundFailException {
+        this.business = business;
     }
 
     @Override
     public Business<?> getBusiness() {
-        return null;
+        return business;
     }
 }
