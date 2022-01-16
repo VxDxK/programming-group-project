@@ -5,7 +5,16 @@ import businesses.BusinessFoundFailException;
 import businesses.Businessman;
 import products.Food;
 
+/**
+ * Класс персонажа
+ * Георгий Троян
+ * Владелец ресторана
+ * @author maxim
+ */
 public final class GeorgeTroyan implements Businessman {
+    /**
+     * Инициализация бизнеса
+     */
     public Business<?> business;
 
     @Override
