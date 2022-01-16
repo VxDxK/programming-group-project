@@ -1,0 +1,64 @@
+@startuml diagram
+
+package businesses {
+  class AkhmadullinaDreams
+  class Business<T extends Manufacturable>
+  class BusinessFoundFailException
+  interface Businessman
+  class CheeseDairy
+  enum IndustryType
+  class Market
+  class Restaurant
+}
+
+package persons {
+  class AlenaAkhmadullina
+  class GeorgeTroyan
+  class OlegSirota
+  interface Businessman
+  abstract class Person
+}
+
+package products {
+    class Cheese
+    class Clothes
+    enum Clothes.Sex
+    class DenimJacket
+    class Dress
+    abstract class Food
+    class Jeans
+    interface Manufacturable
+    class Scarf
+    class Sweatshirt
+    class ClothesFactory
+}
+
+package util {
+    class Pair <K, V>
+    class Range
+}
+
+Business <|-- AkhmadullinaDreams : <Clothes>
+Business <|-- CheeseDairy : <Cheese>
+Business <|-- Restaurant : <Food>
+
+Person <|-- AlenaAkhmadullina
+Businessman <|.. AlenaAkhmadullina
+
+Person <|-- OlegSirota
+Businessman <|.. OlegSirota
+
+Businessman <|.. GeorgeTroyan
+Person <|-- GeorgeTroyan
+
+Food <|-- Cheese
+Manufacturable <|.. Clothes
+Clothes <|-- DenimJacket
+Clothes <|-- Dress
+Manufacturable <|.. Food
+Clothes <|-- Jeans
+Clothes <.. Clothes.Sex
+Clothes <|-- Sweatshirt
+Clothes <|-- Scarf
+
+@enduml
