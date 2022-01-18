@@ -3,7 +3,7 @@ package util;
 import java.util.Iterator;
 
 /**
- * Вспомогатальный класс для написания циклов в Python стиле
+ * Вспомогательный класс для написания циклов в Python стиле
  * @author vadim
  */
 public class Range {

@@ -19,14 +19,14 @@ public class Sweatshirt extends Clothes{
 
     /**
      * Конструктор одежды
-     * @param color - цвет
-     * @param size  - размер
-     * @param sex   - пол
-     * @param warmingFactor - коэффициент согреваемости
-     * @param numberOfButtons - количество пуговиц
+     * @param color цвет
+     * @param size размер
+     * @param sex пол
+     * @param warmingFactor коэффициент согреваемости
+     * @param numberOfButtons количество пуговиц
      */
-    public Sweatshirt(Color color, int size, Sex sex, int warmingFactor, int numberOfButtons) {
-        super(color, size, sex);
+    public Sweatshirt(Color color, int size, Sex sex, int textile, int warmingFactor, int numberOfButtons) {
+        super(color, size, sex, textile);
         this.warmingFactor = warmingFactor;
         this.numberOfButtons = numberOfButtons;
     }
@@ -39,7 +39,7 @@ public class Sweatshirt extends Clothes{
     @Override
     public String toString() {
         return "Фуфайка " +
-                "цвет=" + color.toString() +
+                "цвет RGB=" + color.getRed() + "," + color.getGreen() + "," + color.getBlue() + " " +
                 ", размер=" + size +
                 ", пол=" + sex +
                 ", коэффициент согреваемости=" + warmingFactor +

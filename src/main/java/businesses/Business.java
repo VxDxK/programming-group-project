@@ -4,7 +4,6 @@ import persons.Person;
 import products.Manufacturable;
 import util.Pair;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -16,7 +15,7 @@ public abstract class Business<T extends Manufacturable> {
     protected List<Pair<IndustryType, Integer>> types= new ArrayList<>();
     protected Integer businessLife;
     protected List<T> products = new ArrayList<>();
-
+    protected int capitalization;
 
     public List<Pair<IndustryType, Integer>> getTypes() {
         return types;
@@ -36,13 +35,26 @@ public abstract class Business<T extends Manufacturable> {
         this.businessLife = businessLife;
     }
 
+    public int getCapitalization() {
+        return capitalization;
+    }
+
+    public void addCapitalization(int capitalization) throws BusinessFoundFailException {
+        this.capitalization += capitalization;
+        if(capitalization < -50){
+            throw new BusinessFoundFailException("Бизнес прогорел после " + businessLife + " существования");
+        }
+    }
+
     public List<T> getAllProducts(){
         return products;
     }
     public void addProduct(T item){
         products.add(item);
     }
+    public abstract void service(Person ... people);
+    public abstract T advertising();
 
-     public abstract void mainActivity();
+    public abstract void mainActivity();
 
 }

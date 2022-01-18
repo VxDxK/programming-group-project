@@ -9,7 +9,7 @@ import java.util.Objects;
  * Класс джинсовой куртки
  * @author artem
  */
-public final class DenimJacket extends Clothes {
+public class DenimJacket extends Clothes {
     /**
      * длинные ли рукава
      */
@@ -27,8 +27,8 @@ public final class DenimJacket extends Clothes {
      * @param longSleeves - длинные рукава
      * @param hood - капюшон
      */
-    public DenimJacket(Color color, int size, Sex sex, boolean longSleeves, boolean hood) {
-        super(color, size, sex);
+    public DenimJacket(Color color, int size, Sex sex, int textile, boolean longSleeves, boolean hood) {
+        super(color, size, sex, textile);
         this.longSleeves = longSleeves;
         this.hood = hood;
     }
@@ -50,7 +50,7 @@ public final class DenimJacket extends Clothes {
     @Override
     public String toString() {
         return "Куртка из денима " +
-                "цвет=" + color +
+                "цвет RGB=" + color.getRed() + "," + color.getGreen() + "," + color.getBlue() + " " +
                 ", размер=" + size +
                 ", пол=" + sex +
                 ", есть ли рукава=" + longSleeves +

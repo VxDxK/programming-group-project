@@ -2,6 +2,7 @@
 
 package businesses {
   class AkhmadullinaDreams
+  class AkhmadullinaDreams.DreamsFactory
   class Business<T extends Manufacturable>
   class BusinessFoundFailException
   interface Businessman
@@ -30,7 +31,6 @@ package products {
     interface Manufacturable
     class Scarf
     class Sweatshirt
-    class ClothesFactory
 }
 
 package util {
@@ -60,5 +60,7 @@ Clothes <|-- Jeans
 Clothes <.. Clothes.Sex
 Clothes <|-- Sweatshirt
 Clothes <|-- Scarf
+
+AkhmadullinaDreams <.. AkhmadullinaDreams.DreamsFactory
 
 @enduml

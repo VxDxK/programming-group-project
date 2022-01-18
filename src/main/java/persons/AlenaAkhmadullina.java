@@ -54,6 +54,7 @@ public final class AlenaAkhmadullina extends Person implements Businessman {
             e.printStackTrace();
         }
         System.out.printf("\nПрошло %d лет\n", business.getBusinessLife());
+        business.addCapitalization(100);
     }
 
     @Override
@@ -79,6 +80,7 @@ public final class AlenaAkhmadullina extends Person implements Businessman {
 
     @Override
     public void join(Business<?> business) {
-        System.out.println("Алена Ахмадулина посетила какое место");
+        System.out.println("Алена Ахмадулина посетила место " + business.getClass().getSimpleName());
+        business.service(this);
     }
 }
