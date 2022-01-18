@@ -32,7 +32,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        Businessman alenaAkhmadullina = new AlenaAkhmadullina();
+        AlenaAkhmadullina alenaAkhmadullina = new AlenaAkhmadullina();
         AkhmadullinaDreams dreams = new AkhmadullinaDreams(5, 5);
 
         market.addBusiness(dreams);
@@ -48,13 +48,10 @@ public class Main {
             e.printStackTrace();
             System.exit(-1);
         }
-        dreams.addProduct(new DenimJacket(Color.BLACK, 39, Clothes.Sex.FEMALE, false, true));
-        ClothesFactory clothesFactory = new ClothesFactory();
-        for(Integer i : range(6)){
-            dreams.addProduct(clothesFactory.generateClothes());
-        }
+        dreams.addProduct(new DenimJacket(Color.BLACK, 39, Clothes.Sex.FEMALE, 10, false, true));
+
         System.out.println("Упорство и профессионализм помогли " + alenaAkhmadullina.getClass().getSimpleName() + " добиться успеха");
         dreams.celebrateAnn(cheeseDairy);
-
+        alenaAkhmadullina.join(restaurant);
     }
 }

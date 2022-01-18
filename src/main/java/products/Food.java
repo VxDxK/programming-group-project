@@ -1,5 +1,9 @@
 package products;
 
+/**
+ * Класс еды
+ * @author vadim
+ */
 public abstract class Food implements Manufacturable{
     protected int satiety;
     protected boolean isReady = false;

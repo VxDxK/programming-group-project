@@ -8,7 +8,7 @@ import java.util.Objects;
  * @param <V> второй параметр
  * @author vadim
  */
-public final class Pair <K, V>{
+public class Pair <K, V>{
     private K first;
     private V second;
 

@@ -25,8 +25,8 @@ public final class Dress extends Clothes{
      * @param length - длина платья
      * @param sleeves - рукава
      */
-    public Dress(Color color, int size, Sex sex, int length, boolean sleeves) {
-        super(color, size, sex);
+    public Dress(Color color, int size, Sex sex, int length, int textile, boolean sleeves) {
+        super(color, size, sex, textile);
         this.length = length;
         this.sleeves = sleeves;
     }
@@ -48,7 +48,7 @@ public final class Dress extends Clothes{
     @Override
     public String toString() {
         return "Платье " +
-                "цвет=" + color +
+                "цвет RGB=" + color.getRed() + "," + color.getGreen() + "," + color.getBlue() + " " +
                 ", размер=" + size +
                 ", пол=" + sex +
                 ", длинна до колена=" + length +

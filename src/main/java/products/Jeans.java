@@ -25,8 +25,8 @@ public final class Jeans extends Clothes{
      * @param skinny - зауженные
      * @param fit - посадка
      */
-    public Jeans(Color color, int size, Sex sex, boolean skinny, String fit) {
-        super(color, size, sex);
+    public Jeans(Color color, int size, Sex sex, int textile, boolean skinny, String fit) {
+        super(color, size, sex, textile);
         this.skinny = skinny;
         this.fit = fit;
     }
@@ -48,7 +48,7 @@ public final class Jeans extends Clothes{
     @Override
     public String toString() {
         return "Джинсы " +
-                "цвет=" + color.toString() +
+                "цвет RGB=" + color.getRed() + "," + color.getGreen() + "," + color.getBlue() + " " +
                 ", цвет=" + size +
                 ", пол=" + sex +
                 ", зауженность=" + skinny +

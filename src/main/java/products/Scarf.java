@@ -34,8 +34,8 @@ public class Scarf extends Clothes {
      * @param viscose - процент содержания вискозы
      * @param wool - процент содержания шерсти
      */
-    public Scarf(Color color, int size, Sex sex, int nylon, int wool, int viscose, int angora) {
-        super(color, size, sex);
+    public Scarf(Color color, int size, Sex sex, int textile, int nylon, int wool, int viscose, int angora) {
+        super(color, size, sex, textile);
         if(nylon + wool + viscose + angora != 100){
             throw new IllegalArgumentException("Процент материалов должен быть равен сотне");
         }
@@ -68,7 +68,7 @@ public class Scarf extends Clothes {
     @Override
     public String toString() {
         return "Косынка " +
-                "цвет=" + color +
+                "цвет RGB=" + color.getRed() + "," + color.getGreen() + "," + color.getBlue() + " " +
                 ", размер=" + size +
                 ", пол=" + sex +
                 ", доля нейлона=" + nylon +

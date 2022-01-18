@@ -20,17 +20,21 @@ public abstract class Clothes implements Manufacturable{
      * Пол
      */
     protected Sex sex;
-
+    /**
+     * Количество сырья, необходимого для производства одежды.
+     */
+    protected int textile;
     /**
      * Конструктор одежды
      * @param color - цвет
      * @param size - размер
      * @param sex - пол
      */
-    public Clothes(Color color, int size, Sex sex) {
+    public Clothes(Color color, int size, Sex sex, int textile) {
         this.color = color;
         this.size = size;
         this.sex = sex;
+        this.textile = textile;
     }
 
     public Color getColor() {
@@ -73,7 +77,7 @@ public abstract class Clothes implements Manufacturable{
     @Override
     public String toString() {
         return "Clothes{" +
-                "color=" + color +
+                "colorRGB=" + color.getRed() + "," + color.getGreen() + "," + color.getBlue() + " " +
                 ", size=" + size +
                 ", sex=" + sex +
                 '}';
